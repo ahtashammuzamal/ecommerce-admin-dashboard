@@ -26,7 +26,7 @@ import product8 from './product8.jpg';
 export const gridOrderImage = (props) => (
   <div>
     <img
-      className="rounded-xl h-20 md:ml-3"
+      className="rounded-xl h-20 md:ml-3 w-20"
       src={props.ProductImage}
       alt="order-item"
     />
@@ -43,24 +43,6 @@ export const gridOrderStatus = (props) => (
   </button>
 );
 
-export const kanbanGrid = [
-  { headerText: 'To Do',
-    keyField: 'Open',
-    allowToggle: true },
-
-  { headerText: 'In Progress',
-    keyField: 'InProgress',
-    allowToggle: true },
-
-  { headerText: 'Testing',
-    keyField: 'Testing',
-    allowToggle: true,
-    isExpanded: false },
-
-  { headerText: 'Done',
-    keyField: 'Close',
-    allowToggle: true },
-];
 const gridEmployeeProfile = (props) => (
   <div className="flex items-center gap-2">
     <img
@@ -170,6 +152,7 @@ export const barPrimaryYAxis = {
   lineStyle: { width: 0 },
   labelStyle: { color: 'transparent' },
 };
+
 const areaChartData = [
   [
     { x: new Date(2002, 0, 1), y: 2.2 },
@@ -391,84 +374,6 @@ export const LinePrimaryYAxis = {
   minorTickLines: { width: 0 },
 };
 
-export const customersGrid = [
-  { type: 'checkbox', width: '50' },
-  { headerText: 'Name',
-    width: '150',
-    template: customerGridImage,
-    textAlign: 'Center' },
-  { field: 'ProjectName',
-    headerText: 'Project Name',
-    width: '150',
-    textAlign: 'Center' },
-  { field: 'Status',
-    headerText: 'Status',
-    width: '130',
-    format: 'yMd',
-    textAlign: 'Center',
-    template: customerGridStatus },
-  {
-    field: 'Weeks',
-    headerText: 'Weeks',
-    width: '100',
-    format: 'C2',
-    textAlign: 'Center' },
-  { field: 'Budget',
-    headerText: 'Budget',
-    width: '100',
-    format: 'yMd',
-    textAlign: 'Center' },
-
-  { field: 'Location',
-    headerText: 'Location',
-    width: '150',
-    textAlign: 'Center' },
-
-  { field: 'CustomerID',
-    headerText: 'Customer ID',
-    width: '120',
-    textAlign: 'Center',
-    isPrimaryKey: true,
-  },
-
-];
-
-export const employeesGrid = [
-  { headerText: 'Employee',
-    width: '150',
-    template: gridEmployeeProfile,
-    textAlign: 'Center' },
-  { field: 'Name',
-    headerText: '',
-    width: '0',
-    textAlign: 'Center',
-  },
-  { field: 'Title',
-    headerText: 'Designation',
-    width: '170',
-    textAlign: 'Center',
-  },
-  { headerText: 'Country',
-    width: '120',
-    textAlign: 'Center',
-    template: gridEmployeeCountry },
-
-  { field: 'HireDate',
-    headerText: 'Hire Date',
-    width: '135',
-    format: 'yMd',
-    textAlign: 'Center' },
-
-  { field: 'ReportsTo',
-    headerText: 'Reports To',
-    width: '120',
-    textAlign: 'Center' },
-  { field: 'EmployeeID',
-    headerText: 'Employee ID',
-    width: '125',
-    textAlign: 'Center' },
-];
-
 export const links = [
   {
     title: 'Dashboard',
@@ -508,14 +413,6 @@ export const links = [
         name: 'kanban',
         icon: <BsKanban />,
       },
-      {
-        name: 'editor',
-        icon: <FiEdit />,
-      },
-      {
-        name: 'color-picker',
-        icon: <BiColorFill />,
-      },
     ],
   },
   {
@@ -537,23 +434,7 @@ export const links = [
       {
         name: 'pie',
         icon: <FiPieChart />,
-      },
-      {
-        name: 'financial',
-        icon: <RiStockLine />,
-      },
-      {
-        name: 'color-mapping',
-        icon: <BsBarChart />,
-      },
-      {
-        name: 'pyramid',
-        icon: <GiLouvrePyramid />,
-      },
-      {
-        name: 'stacked',
-        icon: <AiOutlineBarChart />,
-      },
+      }
     ],
   },
 ];
@@ -870,6 +751,8 @@ export const userProfileData = [
   },
 ];
 
+
+// Customers, Orders & Employees grid & data
 export const ordersGrid = [
   {
     headerText: 'Image',
@@ -919,6 +802,83 @@ export const ordersGrid = [
   },
 ];
 
+export const customersGrid = [
+  { type: 'checkbox', width: '50' },
+  { headerText: 'Name',
+    width: '150',
+    template: customerGridImage,
+    textAlign: 'Center' },
+  { field: 'ProjectName',
+    headerText: 'Project Name',
+    width: '150',
+    textAlign: 'Center' },
+  { field: 'Status',
+    headerText: 'Status',
+    width: '130',
+    format: 'yMd',
+    textAlign: 'Center',
+    template: customerGridStatus },
+  {
+    field: 'Weeks',
+    headerText: 'Weeks',
+    width: '100',
+    format: 'C2',
+    textAlign: 'Center' },
+  { field: 'Budget',
+    headerText: 'Budget',
+    width: '100',
+    format: 'yMd',
+    textAlign: 'Center' },
+
+  { field: 'Location',
+    headerText: 'Location',
+    width: '150',
+    textAlign: 'Center' },
+
+  { field: 'CustomerID',
+    headerText: 'Customer ID',
+    width: '120',
+    textAlign: 'Center',
+    isPrimaryKey: true,
+  },
+];
+
+export const employeesGrid = [
+  { headerText: 'Employee',
+    width: '150',
+    template: gridEmployeeProfile,
+    textAlign: 'Center' },
+  { field: 'Name',
+    headerText: '',
+    width: '0',
+    textAlign: 'Center',
+  },
+  { field: 'Title',
+    headerText: 'Designation',
+    width: '170',
+    textAlign: 'Center',
+  },
+  { headerText: 'Country',
+    width: '120',
+    textAlign: 'Center',
+    template: gridEmployeeCountry },
+
+  { field: 'HireDate',
+    headerText: 'Hire Date',
+    width: '135',
+    format: 'yMd',
+    textAlign: 'Center' },
+
+  { field: 'ReportsTo',
+    headerText: 'Reports To',
+    width: '120',
+    textAlign: 'Center' },
+  { field: 'EmployeeID',
+    headerText: 'Employee ID',
+    width: '125',
+    textAlign: 'Center' },
+];
+ 
 export const customersData = [
   {
     CustomerID: 1001,
@@ -2843,7 +2803,9 @@ export const ordersData = [
       'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
   },
 ];
+// -----
 
+// Apps data
 export const scheduleData = [
   {
     Id: 1,
@@ -3039,186 +3001,24 @@ export const scheduleData = [
   },
 ];
 
-export const lineChartData = [
-  [
-    { x: new Date(2005, 0, 1), y: 21 },
-    { x: new Date(2006, 0, 1), y: 24 },
-    { x: new Date(2007, 0, 1), y: 36 },
-    { x: new Date(2008, 0, 1), y: 38 },
-    { x: new Date(2009, 0, 1), y: 54 },
-    { x: new Date(2010, 0, 1), y: 57 },
-    { x: new Date(2011, 0, 1), y: 70 },
-  ],
-  [
-    { x: new Date(2005, 0, 1), y: 28 },
-    { x: new Date(2006, 0, 1), y: 44 },
-    { x: new Date(2007, 0, 1), y: 48 },
-    { x: new Date(2008, 0, 1), y: 50 },
-    { x: new Date(2009, 0, 1), y: 66 },
-    { x: new Date(2010, 0, 1), y: 78 },
-    { x: new Date(2011, 0, 1), y: 84 },
-  ],
+export const kanbanGrid = [
+  { headerText: 'To Do',
+    keyField: 'Open',
+    allowToggle: true },
 
-  [
-    { x: new Date(2005, 0, 1), y: 10 },
-    { x: new Date(2006, 0, 1), y: 20 },
-    { x: new Date(2007, 0, 1), y: 30 },
-    { x: new Date(2008, 0, 1), y: 39 },
-    { x: new Date(2009, 0, 1), y: 50 },
-    { x: new Date(2010, 0, 1), y: 70 },
-    { x: new Date(2011, 0, 1), y: 100 },
-  ],
+  { headerText: 'In Progress',
+    keyField: 'InProgress',
+    allowToggle: true },
+
+  { headerText: 'Testing',
+    keyField: 'Testing',
+    allowToggle: true,
+    isExpanded: false },
+
+  { headerText: 'Done',
+    keyField: 'Close',
+    allowToggle: true },
 ];
-export const dropdownData = [
-  {
-    Id: '1',
-    Time: 'March 2021',
-  },
-  {
-    Id: '2',
-    Time: 'April 2021',
-  }, {
-    Id: '3',
-    Time: 'May 2021',
-  },
-];
-export const SparklineAreaData = [
-  { x: 1, yval: 2 },
-  { x: 2, yval: 6 },
-  { x: 3, yval: 8 },
-  { x: 4, yval: 5 },
-  { x: 5, yval: 10 },
-
-];
-
-export const lineCustomSeries = [
-  { dataSource: lineChartData[0],
-    xName: 'x',
-    yName: 'y',
-    name: 'Germany',
-    width: '2',
-    marker: { visible: true, width: 10, height: 10 },
-    type: 'Line' },
-
-  { dataSource: lineChartData[1],
-    xName: 'x',
-    yName: 'y',
-    name: 'England',
-    width: '2',
-    marker: { visible: true, width: 10, height: 10 },
-    type: 'Line' },
-
-  { dataSource: lineChartData[2],
-    xName: 'x',
-    yName: 'y',
-    name: 'India',
-    width: '2',
-    marker: { visible: true, width: 10, height: 10 },
-    type: 'Line' },
-
-];
-
-export const pieChartData = [
-  { x: 'Labour', y: 18, text: '18%' },
-  { x: 'Legal', y: 8, text: '8%' },
-  { x: 'Production', y: 15, text: '15%' },
-  { x: 'License', y: 11, text: '11%' },
-  { x: 'Facilities', y: 18, text: '18%' },
-  { x: 'Taxes', y: 14, text: '14%' },
-  { x: 'Insurance', y: 16, text: '16%' },
-];
-
-export const contextMenuItems = [
-  'AutoFit',
-  'AutoFitAll',
-  'SortAscending',
-  'SortDescending',
-  'Copy',
-  'Edit',
-  'Delete',
-  'Save',
-  'Cancel',
-  'PdfExport',
-  'ExcelExport',
-  'CsvExport',
-  'FirstPage',
-  'PrevPage',
-  'LastPage',
-  'NextPage',
-];
-
-export const ecomPieChartData = [
-  { x: '2018', y: 18, text: '35%' },
-  { x: '2019', y: 18, text: '15%' },
-  { x: '2020', y: 18, text: '25%' },
-  { x: '2021', y: 18, text: '25%' },
-];
-
-export const stackedChartData = [
-  [
-    { x: 'Jan', y: 111.1 },
-    { x: 'Feb', y: 127.3 },
-    { x: 'Mar', y: 143.4 },
-    { x: 'Apr', y: 159.9 },
-    { x: 'May', y: 159.9 },
-    { x: 'Jun', y: 159.9 },
-    { x: 'July', y: 159.9 },
-  ],
-  [
-    { x: 'Jan', y: 111.1 },
-    { x: 'Feb', y: 127.3 },
-    { x: 'Mar', y: 143.4 },
-    { x: 'Apr', y: 159.9 },
-    { x: 'May', y: 159.9 },
-    { x: 'Jun', y: 159.9 },
-    { x: 'July', y: 159.9 },
-  ],
-];
-
-export const stackedCustomSeries = [
-
-  { dataSource: stackedChartData[0],
-    xName: 'x',
-    yName: 'y',
-    name: 'Budget',
-    type: 'StackingColumn',
-    background: 'blue',
-
-  },
-
-  { dataSource: stackedChartData[1],
-    xName: 'x',
-    yName: 'y',
-    name: 'Expense',
-    type: 'StackingColumn',
-    background: 'red',
-
-  },
-
-];
-
-export const stackedPrimaryXAxis = {
-  majorGridLines: { width: 0 },
-  minorGridLines: { width: 0 },
-  majorTickLines: { width: 0 },
-  minorTickLines: { width: 0 },
-  interval: 1,
-  lineStyle: { width: 0 },
-  labelIntersectAction: 'Rotate45',
-  valueType: 'Category',
-};
-
-export const stackedPrimaryYAxis = {
-  lineStyle: { width: 0 },
-  minimum: 100,
-  maximum: 400,
-  interval: 100,
-  majorTickLines: { width: 0 },
-  majorGridLines: { width: 1 },
-  minorGridLines: { width: 1 },
-  minorTickLines: { width: 0 },
-  labelFormat: '{value}',
-};
 
 export const kanbanData = [
   {
@@ -3572,6 +3372,188 @@ export const kanbanData = [
     ClassName: 'e-bug, e-release, e-nancy-davloio',
   },
 ];
+// 
+
+export const lineChartData = [
+  [
+    { x: new Date(2005, 0, 1), y: 21 },
+    { x: new Date(2006, 0, 1), y: 24 },
+    { x: new Date(2007, 0, 1), y: 36 },
+    { x: new Date(2008, 0, 1), y: 38 },
+    { x: new Date(2009, 0, 1), y: 54 },
+    { x: new Date(2010, 0, 1), y: 57 },
+    { x: new Date(2011, 0, 1), y: 70 },
+  ],
+  [
+    { x: new Date(2005, 0, 1), y: 28 },
+    { x: new Date(2006, 0, 1), y: 44 },
+    { x: new Date(2007, 0, 1), y: 48 },
+    { x: new Date(2008, 0, 1), y: 50 },
+    { x: new Date(2009, 0, 1), y: 66 },
+    { x: new Date(2010, 0, 1), y: 78 },
+    { x: new Date(2011, 0, 1), y: 84 },
+  ],
+
+  [
+    { x: new Date(2005, 0, 1), y: 10 },
+    { x: new Date(2006, 0, 1), y: 20 },
+    { x: new Date(2007, 0, 1), y: 30 },
+    { x: new Date(2008, 0, 1), y: 39 },
+    { x: new Date(2009, 0, 1), y: 50 },
+    { x: new Date(2010, 0, 1), y: 70 },
+    { x: new Date(2011, 0, 1), y: 100 },
+  ],
+];
+
+export const dropdownData = [
+  {
+    Id: '1',
+    Time: 'March 2021',
+  },
+  {
+    Id: '2',
+    Time: 'April 2021',
+  }, {
+    Id: '3',
+    Time: 'May 2021',
+  },
+];
+
+export const SparklineAreaData = [
+  { x: 1, yval: 2 },
+  { x: 2, yval: 6 },
+  { x: 3, yval: 8 },
+  { x: 4, yval: 5 },
+  { x: 5, yval: 10 },
+];
+
+export const lineCustomSeries = [
+  { dataSource: lineChartData[0],
+    xName: 'x',
+    yName: 'y',
+    name: 'Germany',
+    width: '2',
+    marker: { visible: true, width: 10, height: 10 },
+    type: 'Line' },
+
+  { dataSource: lineChartData[1],
+    xName: 'x',
+    yName: 'y',
+    name: 'England',
+    width: '2',
+    marker: { visible: true, width: 10, height: 10 },
+    type: 'Line' },
+
+  { dataSource: lineChartData[2],
+    xName: 'x',
+    yName: 'y',
+    name: 'India',
+    width: '2',
+    marker: { visible: true, width: 10, height: 10 },
+    type: 'Line' },
+
+];
+
+export const pieChartData = [
+  { x: 'Labour', y: 18, text: '18%' },
+  { x: 'Legal', y: 8, text: '8%' },
+  { x: 'Production', y: 15, text: '15%' },
+  { x: 'License', y: 11, text: '11%' },
+  { x: 'Facilities', y: 18, text: '18%' },
+  { x: 'Taxes', y: 14, text: '14%' },
+  { x: 'Insurance', y: 16, text: '16%' },
+];
+
+export const contextMenuItems = [
+  'AutoFit',
+  'AutoFitAll',
+  'SortAscending',
+  'SortDescending',
+  'Copy',
+  'Edit',
+  'Delete',
+  'Save',
+  'Cancel',
+  'PdfExport',
+  'ExcelExport',
+  'CsvExport',
+  'FirstPage',
+  'PrevPage',
+  'LastPage',
+  'NextPage',
+];
+
+export const ecomPieChartData = [
+  { x: '2018', y: 18, text: '35%' },
+  { x: '2019', y: 18, text: '15%' },
+  { x: '2020', y: 18, text: '25%' },
+  { x: '2021', y: 18, text: '25%' },
+];
+
+export const stackedChartData = [
+  [
+    { x: 'Jan', y: 111.1 },
+    { x: 'Feb', y: 127.3 },
+    { x: 'Mar', y: 143.4 },
+    { x: 'Apr', y: 159.9 },
+    { x: 'May', y: 159.9 },
+    { x: 'Jun', y: 159.9 },
+    { x: 'July', y: 159.9 },
+  ],
+  [
+    { x: 'Jan', y: 111.1 },
+    { x: 'Feb', y: 127.3 },
+    { x: 'Mar', y: 143.4 },
+    { x: 'Apr', y: 159.9 },
+    { x: 'May', y: 159.9 },
+    { x: 'Jun', y: 159.9 },
+    { x: 'July', y: 159.9 },
+  ],
+];
+
+// Stack chart belongs to revenue section at dashboard
+
+export const stackedCustomSeries = [
+
+  { dataSource: stackedChartData[0],
+    xName: 'x',
+    yName: 'y',
+    name: 'Budget',
+    type: 'StackingColumn',
+    background: 'blue',
+  },
+
+  { dataSource: stackedChartData[1],
+    xName: 'x',
+    yName: 'y',
+    name: 'Expense',
+    type: 'StackingColumn',
+    background: 'red',
+  },
+];
+
+export const stackedPrimaryXAxis = {
+  majorGridLines: { width: 0 },
+  minorGridLines: { width: 0 },
+  majorTickLines: { width: 0 },
+  minorTickLines: { width: 0 },
+  interval: 1,
+  lineStyle: { width: 0 },
+  labelIntersectAction: 'Rotate45',
+  valueType: 'Category',
+};
+
+export const stackedPrimaryYAxis = {
+  lineStyle: { width: 0 },
+  minimum: 100,
+  maximum: 400,
+  interval: 100,
+  majorTickLines: { width: 0 },
+  majorGridLines: { width: 1 },
+  minorGridLines: { width: 1 },
+  minorTickLines: { width: 0 },
+  labelFormat: '{value}',
+};
 
 export const financialChartData = [
   {
